@@ -54,7 +54,7 @@ healthType = ['Scab',
  'Healthy']
 
 
-datapath = "/content/drive/MyDrive/project1/snapshot/"
+datapath = "snapshot/"
 
 
 def main():
@@ -149,7 +149,7 @@ def set_png_as_page_bg(png_file):
 
 def identify():
     set_png_as_page_bg(datapath+'identify2.jpg')
-    soil_model = load_model('models/soil_model2.h5')
+    soil_model = load_model('models/soil_model.tflite')
     st.set_option('deprecation.showfileUploaderEncoding', False)
     st.subheader("Choose a soil image file that you extracted from the work site or field")
     uploaded_file = st.file_uploader("Upload an image", type = "jpg")

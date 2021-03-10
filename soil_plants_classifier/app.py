@@ -54,7 +54,7 @@ healthType = ['Scab',
  'Healthy']
 
 
-datapath = "snapshot/"
+datapath = "ML_DL/snapshot/"
 
 
 def main():

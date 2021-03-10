@@ -60,10 +60,7 @@ datapath = "snapshot/"
 def main():
 
     page = st.sidebar.selectbox("App Selections", ["Homepage", "About",  "Plant_Health"])
-    if page == "Identify":
-        #st.title("Soil Identifier")
-        #identify()
-    elif page == "Homepage":
+    if page == "Homepage":
         homepage()
     elif page == "About":
         about()

@@ -54,7 +54,7 @@ healthType = ['Scab',
  'Healthy']
 
 
-datapath = "ML_DL/snapshot/"
+datapath = "snapshot/"
 
 
 def main():
@@ -78,9 +78,9 @@ def health():
         st.write("")
         name = "temp1.jpg"
 
-        image.save(datapath+name)
+        image.save(name)
 
-        result = model_predict(datapath+name, leaf_model)
+        result = model_predict(name, leaf_model)
         pred = healthType[result]
         st.header("The state of your leaf is - "+ pred )
 

@@ -147,26 +147,6 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
-def identify():
-    set_png_as_page_bg(datapath+'identify2.jpg')
-    soil_model = load_model('soil-model.h5')
-    st.set_option('deprecation.showfileUploaderEncoding', False)
-    st.subheader("Choose a soil image file that you extracted from the work site or field")
-    uploaded_file = st.file_uploader("Upload an image", type = "jpg")
-    #temp_file = NamedTemporaryFile(delete = False)
-    if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        st.image(image, use_column_width=True)
-        st.write("")
-        name = "temp.jpg"
-
-        image.save(datapath+name)
-
-        result = model_predict(datapath+name ,soil_model)
-        pred = classes[result]
-        st.header("The soil is of "+ pred + " type")
-        st.subheader("The types of crops suggested for "+ pred + " soil are: "+ suggestions[pred])
-
 
 
 def model_predict(image_path,model):
